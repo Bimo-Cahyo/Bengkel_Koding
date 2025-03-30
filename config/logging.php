@@ -98,10 +98,17 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
+<<<<<<< HEAD
             'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
                 'stream' => 'php://stderr',
             ],
+=======
+            'handler_with' => [
+                'stream' => 'php://stderr',
+            ],
+            'formatter' => env('LOG_STDERR_FORMATTER'),
+>>>>>>> f66d16a (coba)
             'processors' => [PsrLogMessageProcessor::class],
         ],
 

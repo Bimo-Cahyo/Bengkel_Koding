@@ -1056,6 +1056,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v12.2.0",
             "source": {
                 "type": "git",
@@ -1066,6 +1067,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/2fb06941bc69ea92f28b2888535ab144ee006889",
                 "reference": "2fb06941bc69ea92f28b2888535ab144ee006889",
+=======
+            "version": "v12.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "ca0412e978f78ecea0cafbe34dd8b18010064f73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/ca0412e978f78ecea0cafbe34dd8b18010064f73",
+                "reference": "ca0412e978f78ecea0cafbe34dd8b18010064f73",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1280,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2025-03-12T14:38:20+00:00"
+=======
+            "time": "2025-03-18T13:49:19+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "laravel/prompts",
@@ -2997,6 +3014,7 @@
         },
         {
             "name": "psy/psysh",
+<<<<<<< HEAD
             "version": "v0.12.7",
             "source": {
                 "type": "git",
@@ -3007,6 +3025,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
                 "reference": "d73fa3c74918ef4522bb8a3bf9cab39161c4b57c",
+=======
+            "version": "v0.12.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/psysh.git",
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+                "reference": "85057ceedee50c49d4f6ecaff73ee96adb3b3625",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -3070,9 +3100,15 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.12.7"
             },
             "time": "2024-12-10T01:58:33+00:00"
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.8"
+            },
+            "time": "2025-03-16T03:05:19+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5852,6 +5888,7 @@
         },
         {
             "name": "filp/whoops",
+<<<<<<< HEAD
             "version": "2.17.0",
             "source": {
                 "type": "git",
@@ -5862,6 +5899,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/filp/whoops/zipball/075bc0c26631110584175de6523ab3f1652eb28e",
                 "reference": "075bc0c26631110584175de6523ab3f1652eb28e",
+=======
+            "version": "2.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filp/whoops.git",
+                "reference": "a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e",
+                "reference": "a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -5911,7 +5960,11 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/filp/whoops/tree/2.17.0"
+=======
+                "source": "https://github.com/filp/whoops/tree/2.18.0"
+>>>>>>> f66d16a (coba)
             },
             "funding": [
                 {
@@ -5919,7 +5972,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2025-01-25T12:00:00+00:00"
+=======
+            "time": "2025-03-15T12:00:00+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -6052,6 +6109,7 @@
         },
         {
             "name": "laravel/pint",
+<<<<<<< HEAD
             "version": "v1.21.1",
             "source": {
                 "type": "git",
@@ -6062,6 +6120,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/pint/zipball/c44bffbb2334e90fba560933c45948fa4a3f3e86",
                 "reference": "c44bffbb2334e90fba560933c45948fa4a3f3e86",
+=======
+            "version": "v1.21.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/pint.git",
+                "reference": "370772e7d9e9da087678a0edf2b11b6960e40558"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/pint/zipball/370772e7d9e9da087678a0edf2b11b6960e40558",
+                "reference": "370772e7d9e9da087678a0edf2b11b6960e40558",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -6072,9 +6142,15 @@
                 "php": "^8.2.0"
             },
             "require-dev": {
+<<<<<<< HEAD
                 "friendsofphp/php-cs-fixer": "^3.70.2",
                 "illuminate/view": "^11.44.1",
                 "larastan/larastan": "^3.1.0",
+=======
+                "friendsofphp/php-cs-fixer": "^3.72.0",
+                "illuminate/view": "^11.44.2",
+                "larastan/larastan": "^3.2.0",
+>>>>>>> f66d16a (coba)
                 "laravel-zero/framework": "^11.36.1",
                 "mockery/mockery": "^1.6.12",
                 "nunomaduro/termwind": "^2.3",
@@ -6114,7 +6190,11 @@
                 "issues": "https://github.com/laravel/pint/issues",
                 "source": "https://github.com/laravel/pint"
             },
+<<<<<<< HEAD
             "time": "2025-03-11T03:22:21+00:00"
+=======
+            "time": "2025-03-14T22:31:42+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "laravel/sail",
@@ -6324,6 +6404,7 @@
         },
         {
             "name": "nunomaduro/collision",
+<<<<<<< HEAD
             "version": "v8.6.1",
             "source": {
                 "type": "git",
@@ -6338,6 +6419,22 @@
             },
             "require": {
                 "filp/whoops": "^2.16.0",
+=======
+            "version": "v8.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nunomaduro/collision.git",
+                "reference": "586cb8181a257a2152b6a855ca8d9598878a1a26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/586cb8181a257a2152b6a855ca8d9598878a1a26",
+                "reference": "586cb8181a257a2152b6a855ca8d9598878a1a26",
+                "shasum": ""
+            },
+            "require": {
+                "filp/whoops": "^2.17.0",
+>>>>>>> f66d16a (coba)
                 "nunomaduro/termwind": "^2.3.0",
                 "php": "^8.2.0",
                 "symfony/console": "^7.2.1"
@@ -6347,6 +6444,7 @@
                 "phpunit/phpunit": "<11.5.3 || >=12.0.0"
             },
             "require-dev": {
+<<<<<<< HEAD
                 "larastan/larastan": "^2.9.12",
                 "laravel/framework": "^11.39.1",
                 "laravel/pint": "^1.20.0",
@@ -6355,6 +6453,16 @@
                 "laravel/tinker": "^2.10.0",
                 "orchestra/testbench-core": "^9.9.2",
                 "pestphp/pest": "^3.7.3",
+=======
+                "larastan/larastan": "^2.10.0",
+                "laravel/framework": "^11.44.2",
+                "laravel/pint": "^1.21.2",
+                "laravel/sail": "^1.41.0",
+                "laravel/sanctum": "^4.0.8",
+                "laravel/tinker": "^2.10.1",
+                "orchestra/testbench-core": "^9.12.0",
+                "pestphp/pest": "^3.7.4",
+>>>>>>> f66d16a (coba)
                 "sebastian/environment": "^6.1.0 || ^7.2.0"
             },
             "type": "library",
@@ -6418,7 +6526,11 @@
                     "type": "patreon"
                 }
             ],
+<<<<<<< HEAD
             "time": "2025-01-23T13:41:43+00:00"
+=======
+            "time": "2025-03-14T22:37:40+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "phar-io/manifest",
@@ -6863,6 +6975,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "11.5.12",
             "source": {
                 "type": "git",
@@ -6873,6 +6986,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d42785840519401ed2113292263795eb4c0f95da",
                 "reference": "d42785840519401ed2113292263795eb4c0f95da",
+=======
+            "version": "11.5.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
+                "reference": "3bbb8d54b3a6718e51fd48cd478079f5f49b82bd",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -6899,7 +7024,11 @@
                 "sebastian/exporter": "^6.3.0",
                 "sebastian/global-state": "^7.0.2",
                 "sebastian/object-enumerator": "^6.0.1",
+<<<<<<< HEAD
                 "sebastian/type": "^5.1.0",
+=======
+                "sebastian/type": "^5.1.2",
+>>>>>>> f66d16a (coba)
                 "sebastian/version": "^5.0.2",
                 "staabm/side-effects-detector": "^1.0.5"
             },
@@ -6944,7 +7073,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.12"
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.13"
+>>>>>>> f66d16a (coba)
             },
             "funding": [
                 {
@@ -6960,7 +7093,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2025-03-07T07:31:03+00:00"
+=======
+            "time": "2025-03-18T13:41:57+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "sebastian/cli-parser",
@@ -7779,6 +7916,7 @@
         },
         {
             "name": "sebastian/type",
+<<<<<<< HEAD
             "version": "5.1.0",
             "source": {
                 "type": "git",
@@ -7789,6 +7927,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/461b9c5da241511a2a0e8f240814fb23ce5c0aac",
                 "reference": "461b9c5da241511a2a0e8f240814fb23ce5c0aac",
+=======
+            "version": "5.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/type.git",
+                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
+                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
+>>>>>>> f66d16a (coba)
                 "shasum": ""
             },
             "require": {
@@ -7824,7 +7974,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
                 "security": "https://github.com/sebastianbergmann/type/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/type/tree/5.1.0"
+=======
+                "source": "https://github.com/sebastianbergmann/type/tree/5.1.2"
+>>>>>>> f66d16a (coba)
             },
             "funding": [
                 {
@@ -7832,7 +7986,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-09-17T13:12:04+00:00"
+=======
+            "time": "2025-03-18T13:35:50+00:00"
+>>>>>>> f66d16a (coba)
         },
         {
             "name": "sebastian/version",
@@ -8065,12 +8223,21 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
+<<<<<<< HEAD
     "stability-flags": {},
+=======
+    "stability-flags": [],
+>>>>>>> f66d16a (coba)
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
+<<<<<<< HEAD
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
+=======
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+>>>>>>> f66d16a (coba)
 }
