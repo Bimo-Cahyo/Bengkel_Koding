@@ -3,6 +3,7 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 <<<<<<< HEAD
+<<<<<<< HEAD
 @source "../**/*.blade.php";
 @source "../**/*.js";
 @source "../**/*.vue";
@@ -10,6 +11,10 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 >>>>>>> f66d16a (coba)
+=======
+@source '../**/*.blade.php';
+@source '../**/*.js';
+>>>>>>> c9393ac (ke-3)
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',

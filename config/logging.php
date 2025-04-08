@@ -99,16 +99,22 @@ return [
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
                 'stream' => 'php://stderr',
             ],
 =======
+=======
+>>>>>>> c9393ac (ke-3)
             'handler_with' => [
                 'stream' => 'php://stderr',
             ],
             'formatter' => env('LOG_STDERR_FORMATTER'),
+<<<<<<< HEAD
 >>>>>>> f66d16a (coba)
+=======
+>>>>>>> c9393ac (ke-3)
             'processors' => [PsrLogMessageProcessor::class],
         ],
 
