@@ -2,33 +2,40 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use App\Models\Obat;
 use App\Models\Periksa;
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PeriksaController extends Controller
 {
-<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $obat = Obat::all();
-        return view('dokter/periksa.index', compact('obat'));
+        $dokterId = Auth::id();
+        $query = Periksa::with(['pasien', 'dokter'])
+            ->where('id_dokter', $dokterId);
+
+        if (request()->has('search') && request('search') !== '') {
+            $query->whereHas('pasien', function ($q) {
+                $q->where('name', 'like', '%' . request('search') . '%');
+            });
+        }
+
+        $periksas = $query->get();
+        return view('dokter.periksa.index', compact('periksas'));
     }
+
+
 
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view('dokter/periksa.create');
-    }
+    public function create() {}
+
 
     /**
      * Store a newly created resource in storage.
@@ -36,11 +43,15 @@ class PeriksaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_obat' => 'required',
-            'kemasan' => 'required',
-            'harga' => 'required',
+            'id_pasien' => 'required',
+            'id_dokter' => 'required',
+            'tgl_periksa' => 'required',
+            'catatan' => 'nullable',
+            'biaya_periksa' => 'nullable|integer',
         ]);
-        Obat::create($request->all());
+
+        Periksa::create($request->all());
+
         return redirect()->route('periksa.index');
     }
 
@@ -50,8 +61,7 @@ class PeriksaController extends Controller
      */
     public function show(Periksa $periksa)
     {
-        return view('dokter/periksa.edit', compact('periksa'));
-
+        //
     }
 
     /**
@@ -59,37 +69,31 @@ class PeriksaController extends Controller
      */
     public function edit(Periksa $periksa)
     {
-        return view('dokter.periksa.edit', compact('obat'));
+        return view('dokter.periksa.edit', compact('periksa'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Obat $obat)
+
+    public function update(Request $request, Periksa $periksa)
     {
         $request->validate([
-            'name_periksa' => 'required',
-            'kemasan' => 'required',
-            'harga' => 'required'
+            'tgl_periksa' => 'required',
+            'catatan' => 'nullable',
+            'biaya_periksa' => 'nullable|integer',
         ]);
-        $obat->update($request->all());
-        return redirect()->route('periksa.index');
 
+        $periksa->update($request->only(['tgl_periksa', 'catatan', 'biaya_periksa']));
+
+        return redirect()->route('periksa.index');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Obat $obat)
+    public function destroy(Periksa $periksa)
     {
-        $obat->delete();
+        $periksa->delete();
         return redirect()->route('periksa.index');
-
-=======
-    //
-    public function index()
-    {
-        return view('dokter/periksa.index');
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
     }
 }

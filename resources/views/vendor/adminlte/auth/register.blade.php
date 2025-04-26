@@ -1,109 +1,110 @@
-@extends('adminlte::auth.auth-page', ['authType' => 'register'])
-
-@php
-    $loginUrl = View::getSection('login_url') ?? config('adminlte.login_url', 'login');
-    $registerUrl = View::getSection('register_url') ?? config('adminlte.register_url', 'register');
-
-    if (config('adminlte.use_route_url', false)) {
-        $loginUrl = $loginUrl ? route($loginUrl) : '';
-        $registerUrl = $registerUrl ? route($registerUrl) : '';
-    } else {
-        $loginUrl = $loginUrl ? url($loginUrl) : '';
-        $registerUrl = $registerUrl ? url($registerUrl) : '';
-    }
-@endphp
-
-@section('auth_header', __('adminlte::adminlte.register_message'))
+@extends('adminlte::auth.auth-page', ['auth_type' => 'register'])
 
 @section('auth_body')
-    <form action="{{ $registerUrl }}" method="post">
-        @csrf
+<div class="row justify-content-center my-5">
+    <div class="col-md-10 col-lg-8"> {{-- Lebih lebar di md, dan pas di lg --}}
+        <div class="card shadow p-4 rounded-4">
 
-        {{-- Name field --}}
-        <div class="input-group mb-3">
-            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                value="{{ old('name') }}" placeholder="{{ __('adminlte::adminlte.full_name') }}" autofocus>
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-user {{ config('adminlte.classes_auth_icon', '') }}"></span>
-                </div>
+            {{-- Sambutan --}}
+            <div class="text-center mb-4">
+                <h3 class="mb-2">Daftar Akun Pasien</h3>
+                <p class="text-muted">Isi data berikut untuk mendaftar</p>
             </div>
 
-            @error('name')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
+            {{-- Form --}}
+            <form action="{{ route('register') }}" method="POST">
+                @csrf
 
-        {{-- Email field --}}
-        <div class="input-group mb-3">
-            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}">
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                {{-- Nama Lengkap --}}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nama Lengkap</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        class="form-control @error('name') is-invalid @enderror" 
+                        placeholder="Masukkan nama" 
+                        value="{{ old('name') }}" 
+                        required autofocus
+                    >
+                    @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
-            </div>
 
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-
-        {{-- Password field --}}
-        <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                placeholder="{{ __('adminlte::adminlte.password') }}">
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                {{-- Email --}}
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        class="form-control @error('email') is-invalid @enderror" 
+                        placeholder="Masukkan email" 
+                        value="{{ old('email') }}" 
+                        required
+                    >
+                    @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
-            </div>
 
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-
-        {{-- Confirm password field --}}
-        <div class="input-group mb-3">
-            <input type="password" name="password_confirmation"
-                class="form-control @error('password_confirmation') is-invalid @enderror"
-                placeholder="{{ __('adminlte::adminlte.retype_password') }}">
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                {{-- Password --}}
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        class="form-control @error('password') is-invalid @enderror" 
+                        placeholder="Masukkan password" 
+                        required
+                    >
+                    @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
-            </div>
 
-            @error('password_confirmation')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+                {{-- Konfirmasi Password --}}
+                <div class="mb-3">
+                    <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                    <input 
+                        type="password" 
+                        name="password_confirmation" 
+                        id="password_confirmation" 
+                        class="form-control" 
+                        placeholder="Ulangi password" 
+                        required
+                    >
+                </div>
+
+                {{-- Role --}}
+                <div class="mb-4">
+                    <label for="role" class="form-label">Role</label>
+                    <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" required>
+                        <option value="">-- Pilih Role --</option>
+                        <option value="pasien" {{ old('role') == 'pasien' ? 'selected' : '' }}>Pasien</option>
+                    </select>
+                    @error('role')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Tombol Daftar --}}
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-user-plus me-2"></i> Daftar
+                    </button>
+                </div>
+
+                {{-- Link ke Login --}}
+                <div class="mt-4 text-center">
+                    <small class="text-muted">Sudah punya akun?</small> 
+                    <a href="{{ route('login') }}" class="text-primary fw-bold">Login di sini</a>
+                </div>
+            </form>
+
         </div>
-
-        {{-- Register button --}}
-        <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-            <span class="fas fa-user-plus"></span>
-            {{ __('adminlte::adminlte.register') }}
-        </button>
-    </form>
-@stop
-
-@section('auth_footer')
-    <p class="my-0">
-        <a href="{{ $loginUrl }}">
-            {{ __('adminlte::adminlte.i_already_have_a_membership') }}
-        </a>
-    </p>
-@stop
+    </div>
+</div>
+@endsection

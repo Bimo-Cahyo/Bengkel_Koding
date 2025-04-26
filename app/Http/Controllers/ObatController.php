@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Obat;
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 use Illuminate\Http\Request;
 
 class ObatController extends Controller
 {
-<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      */
@@ -19,7 +15,6 @@ class ObatController extends Controller
         $obat = Obat::all();
         return view('dokter/obat.index', compact('obat'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -49,8 +44,7 @@ class ObatController extends Controller
      */
     public function show(Obat $obat)
     {
-        return view('dokter/obat.edit', compact('obat'));
-
+        //
     }
 
     /**
@@ -58,7 +52,7 @@ class ObatController extends Controller
      */
     public function edit(Obat $obat)
     {
-        return view('dokter.obat.edit', compact('obat'));
+        return view('dokter/obat.edit', compact('obat'));
     }
 
     /**
@@ -73,8 +67,8 @@ class ObatController extends Controller
         ]);
         $obat->update($request->all());
         return redirect()->route('obat.index');
-
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -83,12 +77,5 @@ class ObatController extends Controller
     {
         $obat->delete();
         return redirect()->route('obat.index');
-
-=======
-    //
-    public function index()
-    {
-        return view('dokter/obat.index');
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
     }
 }

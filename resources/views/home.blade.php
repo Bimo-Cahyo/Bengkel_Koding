@@ -5,12 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-<<<<<<< HEAD
-                <div class="card-header">{{ __('Dashboard') 
-                }}</div>
-=======
                 <div class="card-header">{{ __('Dashboard') }}</div>
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 
                 <div class="card-body">
                     @if (session('status'))

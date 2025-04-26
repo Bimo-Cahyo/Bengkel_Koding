@@ -1,16 +1,16 @@
+<style>
+    .main-sidebar {
+        background-color: #0600b7 !important;
+    }
+</style>
+
 <aside class="main-sidebar {{ config('adminlte.classes_sidebar', 'sidebar-dark-primary elevation-4') }}">
 
     {{-- Sidebar brand logo --}}
-    @if(config('adminlte.logo_img_xl'))
-<<<<<<< HEAD
+    @if (config('adminlte.logo_img_xl'))
         @include('adminlte::partials.common.brand-logo-xl')
     @else
         @include('adminlte::partials.common.brand-logo-xs')
-=======
-    @include('adminlte::partials.common.brand-logo-xl')
-    @else
-    @include('adminlte::partials.common.brand-logo-xs')
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
     @endif
 
     {{-- Sidebar menu --}}
@@ -18,83 +18,46 @@
         <nav class="pt-2">
             <ul class="nav nav-pills nav-sidebar flex-column {{ config('adminlte.classes_sidebar_nav', '') }}"
                 data-widget="treeview" role="menu"
-<<<<<<< HEAD
-                @if(config('adminlte.sidebar_nav_animation_speed') != 300)
-                    data-animation-speed="{{ config('adminlte.sidebar_nav_animation_speed') }}"
-                @endif
-                @if(!config('adminlte.sidebar_nav_accordion'))
-                    data-accordion="false"
-                @endif>
+                @if (config('adminlte.sidebar_nav_animation_speed') != 300) data-animation-speed="{{ config('adminlte.sidebar_nav_animation_speed') }}" @endif
+                @if (!config('adminlte.sidebar_nav_accordion')) data-accordion="false" @endif>
+                @php $role = Auth::check() ? Auth::user()->role : null; @endphp
 
-
-                {{-- Configured sidebar links --}}
-                @if(request()->is('dokter*'))
+                @if ($role === 'dokter')
+                    {{-- Menu untuk Dokter --}}
                     <li class="nav-item">
-                        <a href="/dokter/periksa" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>periksa</p>
+                        <a href="{{ route('periksa.index') }}"
+                            class="nav-link {{ request()->is('dokter/periksa*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-clinic-medical"></i>
+                            <p>Data Periksa</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/dokter/obat" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>obat</p>
+                        <a href="{{ route('obat.index') }}"
+                            class="nav-link {{ request()->is('dokter/obat*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-prescription-bottle"></i>
+                            <p>Data Obat</p>
                         </a>
                     </li>
-                @else
+                @elseif($role === 'pasien')
+                    {{-- Menu untuk Pasien --}}
                     <li class="nav-item">
-                        <a href="/dokter/periksa" class="nav-link active">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>periksa</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/dokter/obat" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>obat</p>
+                        <a href="{{ route('pasien.periksa.index') }}"
+                            class="nav-link {{ request()->is('pasien/periksa*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-stethoscope"></i>
+                            <p>Periksa & Riwayat</p>
                         </a>
                     </li>
                 @endif
-=======
-                @if(config('adminlte.sidebar_nav_animation_speed') !=300)
-                data-animation-speed="{{ config('adminlte.sidebar_nav_animation_speed') }}"
-                @endif
-                @if(!config('adminlte.sidebar_nav_accordion'))
-                data-accordion="false"
-                @endif>
-
-                {{-- Hak Akses berdasarkan Role --}}
-                @if(Auth::check() && Auth::user()->role === 'dokter')
                 <li class="nav-item">
-                    <a href="{{ url('/dokter/periksa') }}" class="nav-link">
-                        <i class="fas fa-stethoscope nav-icon"></i>
-                        <p>Periksa</p>
+                    <a href="{{ route('logout') }}" class="nav-link"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="nav-icon fas fa-sign-out-alt"></i>
+                        <p>Logout</p>
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('/dokter/obat') }}" class="nav-link">
-                        <i class="fas fa-pills nav-icon"></i>
-                        <p>Obat</p>
-                    </a>
-                </li>
-                @elseif(Auth::check() && Auth::user()->role === 'pasien')
-                <li class="nav-item">
-                    <a href="{{ url('/pasien/periksa') }}" class="nav-link">
-                        <i class="fas fa-notes-medical nav-icon"></i>
-                        <p>Periksa</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ url('/pasien/riwayat') }}" class="nav-link">
-                        <i class="fas fa-history nav-icon"></i>
-                        <p>Riwayat Periksa</p>
-                    </a>
-                </li>
-                @endif
-
-                {{-- Menu dari konfigurasi AdminLTE --}}
-                @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
             </ul>
         </nav>
     </div>

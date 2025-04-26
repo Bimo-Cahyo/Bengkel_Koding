@@ -1,48 +1,36 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Edit Data Periksa</div>
+    <div class="container">
+        <h3>Edit Pemeriksaan</h3>
+        <form action="{{ route('periksa.update', $periksa->id) }}" method="POST">
+            @csrf
+            @method('PUT')
 
-                <div class="card-body">
-                    <form action="{{ route('periksa.update', $periksas->id) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-
-                        <div class="form-group mb-3">
-                            <label for="nama_pasien">Nama Pasien</label>
-                            <input type="text" name="name_pasien" class="form-control" value="{{ $periksa->nama_pasien }}" required>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="tanggal_periksa">Tanggal Periksa</label>
-                            <input type="date" name="tanggal_periksa" class="form-control" value="{{ $periksa->tanggal_periksa }}" required>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="keluhan">Keluhan</label>
-                            <textarea name="keluhan" class="form-control" rows="3" required>{{ $periksa->keluhan }}</textarea>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="diagnosa">Diagnosa</label>
-                            <textarea name="diagnosa" class="form-control" rows="3" required>{{ $periksa->diagnosa }}</textarea>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="resep_obat">Resep Obat</label>
-                            <textarea name="resep_obat" class="form-control" rows="2" required>{{ $periksa->resep_obat }}</textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-warning">Update</button>
-                        <a href="{{ route('periksa.index') }}" class="btn btn-secondary">Kembali</a>
-                    </form>
-                </div>
+            <div class="mb-3">
+                <label>Nama Pasien</label>
+                <input type="text" value="{{ $periksa->pasien->name }}" class="form-control" readonly>
             </div>
-        </div>
+
+            <div class="mb-3">
+                <label>Tanggal Periksa</label>
+                <input type="datetime-local" name="tgl_periksa" value="{{ old('tgl_periksa', $periksa->tgl_periksa) }}"
+                    class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label>Catatan</label>
+                <textarea name="catatan" class="form-control">{{ old('catatan', $periksa->catatan) }}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label>Biaya Periksa</label>
+                <input type="number" name="biaya_periksa" value="{{ old('biaya_periksa', $periksa->biaya_periksa) }}"
+                    class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <a href="{{ route('periksa.index') }}" class="btn btn-secondary">Kembali</a>
+        </form>
     </div>
-</div>
 @endsection

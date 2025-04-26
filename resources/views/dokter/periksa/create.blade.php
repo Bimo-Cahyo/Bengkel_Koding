@@ -1,47 +1,36 @@
-@extends('layouts.app')
+@extends('layouts.app') 
 
+
+@section('title', 'Tambah Obat')
+@section('content_header')
+    <h1>Tambah Obat</h1>
+@endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Tambah Data Periksa</div>
-
-                <div class="card-body">
-                    <form action="{{ route('periksa.store') }}" method="POST">
-                        @csrf
-
-                        <div class="form-group mb-3">
-                            <label for="nama_pasien">Nama Pasien</label>
-                            <input type="text" name="nama_pasien" class="form-control" required>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="tanggal_periksa">Tanggal Periksa</label>
-                            <input type="date" name="tanggal_periksa" class="form-control" required>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="keluhan">Keluhan</label>
-                            <textarea name="keluhan" class="form-control" rows="3" required></textarea>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="diagnosa">Diagnosa</label>
-                            <textarea name="diagnosa" class="form-control" rows="3" required></textarea>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="resep_obat">Resep Obat</label>
-                            <textarea name="resep_obat" class="form-control" rows="2" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                        <a href="{{ route('periksa.index') }}" class="btn btn-secondary">Kembali</a>
-                    </form>
+    <div class="card">
+        <div class="card-body">
+            <form action="{{route('obat.store')}}" method="POST">
+                @csrf {{-- harus ada di form untuk proteksi, biar gaada anomali--}}
+                <div class="form-group">
+                    <label for="nama">Nama obat</label>
+                    <input type="text" name="name_obat" id="name" placeholder="Nama obat" class="form-control" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="nama">Kemasan</label>
+                    {{-- ambil template option di bawah ini di adminLTE nya https://jeroennoten.github.io/Laravel-AdminLTE/ -> components -> basic form components --}}
+                    <x-adminlte-select name="kemasan">
+                        <x-adminlte-options :options="['pill' => 'Pill', 'sachet' => 'Sachet', 'botol' => 'Botol']"
+                            empty-option="Pilih kemasan"/>
+                    </x-adminlte-select>
+                </div>
+                <div class="form-group">
+                    <label for="nama">Harga</label>
+                    <input type="number" name="harga" id="harga" placeholder="Harga obat" class="form-control" required>
+                </div>
+                <div class="wrappper d-flex justify-content-end" style="gap:10px;">
+                    <button type="submit" class="btn btn-success">Tambah</button>
+                    <a href="{{route('obat.index')}}" class="btn btn-secondary">Kembali</a>
+                </div>
+            </form>
         </div>
     </div>
-</div>
 @endsection

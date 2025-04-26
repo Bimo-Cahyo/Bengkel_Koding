@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
+
 
 class LoginController extends Controller
 {
@@ -29,11 +27,13 @@ class LoginController extends Controller
      *
      * @var string
      */
-<<<<<<< HEAD
-    protected $redirectTo = '/home';
-=======
-    //protected $redirectTo = '/home';
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
+    // protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        return Auth::user()->role === 'dokter' ? '/dokter' : '/pasien';
+    }
+
+
 
     /**
      * Create a new controller instance.
@@ -45,26 +45,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
-<<<<<<< HEAD
-
-
-     // protected $redirectTo = '/home';
-     
-    protected function redirectTo()
-    {
-        return Auth::user()->role === 'dokter' ? "/dokter" : "/home";
-    }
-
-
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
-
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 }

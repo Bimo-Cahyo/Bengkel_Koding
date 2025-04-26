@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 import 'bootstrap';
 
 /**
@@ -11,19 +6,10 @@ import 'bootstrap';
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-<<<<<<< HEAD
-=======
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 import axios from 'axios';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -46,7 +32,3 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
 //     enabledTransports: ['ws', 'wss'],
 // });
-<<<<<<< HEAD
-=======
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409

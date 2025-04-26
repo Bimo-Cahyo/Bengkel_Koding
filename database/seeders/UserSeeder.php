@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 
 namespace Database\Seeders;
 
@@ -10,13 +9,6 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 
 
-=======
-namespace Database\Seeders;
-
-use Illuminate\Database\Seeder;
-use App\Models\User;
-
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 class UserSeeder extends Seeder
 {
     /**
@@ -25,22 +17,37 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $data = [
-<<<<<<< HEAD
         [
             'name' => 'Bimo',
             'alamat' => 'Jl You',
             'no_hp' => '085895234567',
             'role' => 'dokter',
             'email' => 'bimo@gmail.com',
-            'password' => 'password'
+            'password' => 'Bimo1234'
         ],
-[
+        [
             'name' => 'Isul',
             'alamat' => 'Jl itu',
             'no_hp' => '087654321',
             'role' => 'pasien',
             'email' => 'isul@gmail.com',
             'password' => 'password'
+        ],
+        [
+            'name' => 'Cahyo',
+            'alamat' => 'Jl Rese',
+            'no_hp' => '08578241052',
+            'role' => 'dokter',
+            'email' => 'cahyo@gmail.com',
+            'password' => 'Cahyo1234'
+        ],
+        [
+            'name' => 'jay',
+            'alamat' => 'Jl salak',
+            'no_hp' => '087655528902',
+            'role' => 'pasien',
+            'email' => 'jay@gmail.com',
+            'password' => 'jay1234'
         ],
         ];
         foreach($data as $d){
@@ -52,28 +59,6 @@ class UserSeeder extends Seeder
                 'email' => $d['email'],
                 'password' => $d['password'],
             ]);
-=======
-            [
-                'name' => 'Bimo',
-                'alamat' => 'Jl Todak',
-                'no_hp' => '0875555233789',
-                'role' => 'dokter',
-                'email' => 'bimo123@gmail.com',
-                'password' => bcrypt('password') // Enkripsi password
-            ],
-            [
-                'name' => 'sila',
-                'alamat' => 'Jl Sials',
-                'no_hp' => '087654327251',
-                'role' => 'pasien',
-                'email' => 'sila@gmail.com',
-                'password' => bcrypt('password') // Enkripsi password
-            ],
-        ];
-
-        foreach ($data as $d) {
-            User::create($d);
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
         }
     }
 }

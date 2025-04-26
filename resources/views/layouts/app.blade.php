@@ -61,11 +61,7 @@
 @push('css')
 <style type="text/css">
 
-<<<<<<< HEAD
     {{-- You can add AdminLTE customizations here --}}
-=======
-
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
     /*
     .card-header {
         border-bottom: none;

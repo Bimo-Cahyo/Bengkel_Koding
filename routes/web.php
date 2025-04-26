@@ -1,67 +1,43 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PeriksaController;
 use App\Http\Controllers\ObatController;
-<<<<<<< HEAD
-
-Route::prefix('dokter')->group(function () {
-Route::resource('obat', ObatController::class);
-Route::resource('periksa', PeriksaController::class);
-});
-=======
-use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\DetailPeriksaController;
 use App\Http\Controllers\PeriksaPasienController;
 
+/* ====================
+| Dokter Routes
+==================== */
 
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
+Route::prefix('dokter')->middleware(['auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'dokter'])->name('dokter');
+    Route::resource('obat', ObatController::class);
+    Route::resource('periksa', PeriksaController::class);
+    Route::get('/detail-periksa/{id}', [DetailPeriksaController::class, 'index'])->name('detail-periksa.index');
+    Route::post('/detail-periksa/{id}', [DetailPeriksaController::class, 'store'])->name('detail-periksa.store');
+    Route::delete('/detail-periksa/{id}', [DetailPeriksaController::class, 'destroy'])->name('detail-periksa.destroy');
+});
 
+/* ====================
+| Pasien Routes
+==================== */
+Route::middleware(['auth'])->prefix('pasien')->group(function () {
+    Route::get('/', [HomeController::class, 'pasien'])->name('pasien');
+    Route::get('/periksa', [PeriksaPasienController::class, 'index'])->name('pasien.periksa.index');
+    Route::post('/periksa', [PeriksaPasienController::class, 'store'])->name('pasien.periksa.store');
+});
+
+/* ====================
+| Auth & Redirect
+==================== */
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
 
 Auth::routes();
 
-Route::get('/dokter', [HomeController::class, 'dokter'])->name('dokter');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
-<<<<<<< HEAD
-=======
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-//untuk ke halaman dokter
-
-
-Route::get('/dokter', [HomeController::class, 'dokter'])->name('dokter');
-
-Route::prefix('dokter')->group(function () {
-    Route::resource('obat', ObatController::class);
-    Route::resource('periksa', PeriksaController::class);
-});
-
-Route::prefix('pasien')->group(function () {
-    Route::resource('riwayat', RiwayatController::class);
-    Route::resource('periksa', PeriksaPasienController::class);
-});
-Auth::routes();
-
-
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
+// kamu bisa hapus jika tidak pakai /home lagi:
+// Route::get('/home', [HomeController::class, 'index'])->name('home');

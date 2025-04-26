@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-@extends('adminlte::auth.verify')
-=======
 @extends('layouts.app')
 
 @section('content')
@@ -29,4 +26,3 @@
     </div>
 </div>
 @endsection
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409

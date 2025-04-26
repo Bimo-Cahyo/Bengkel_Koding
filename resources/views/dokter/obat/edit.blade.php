@@ -4,7 +4,7 @@
 @section('title', 'Edit Obat')
 @section('content_header')
     <div class="card-header">
-        <a href="{{ route('obat.create')}}" class="btn btn-primary">Tambah Obat</a>
+        <a href="{{ route('obat.create') }}" class="btn btn-primary">Tambah Obat</a>
     </div>
 @endsection
 @section('content')

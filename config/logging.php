@@ -98,29 +98,10 @@ return [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-            'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with' => [
-                'stream' => 'php://stderr',
-            ],
-=======
-=======
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
             'handler_with' => [
                 'stream' => 'php://stderr',
             ],
             'formatter' => env('LOG_STDERR_FORMATTER'),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f66d16a (coba)
-=======
->>>>>>> c9393ac (ke-3)
->>>>>>> b41c6c041eaf98c93b1d1f1ef13d38bff0ae2409
             'processors' => [PsrLogMessageProcessor::class],
         ],
 
